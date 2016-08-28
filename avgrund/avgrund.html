@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>7Learn.com - avgrund</title>
+	<link rel="stylesheet" type="text/css" href="avgrund.css">
+	<style type="text/css">
+		body {
+			background-color: #bdc3c7;
+		}
+
+		#sample {
+			width: 300px;
+			height: 37px;
+			background-color: #f1c40f;
+			text-align: center;
+			margin: 50px auto;
+			cursor: pointer;
+			padding-top: 13px;
+			font-size: 24px;
+		}
+
+		.holder {
+			background-color: #2ecc71;
+			border-radius: 5px;
+			box-shadow: 1px 1px 1px gray;
+		}
+	</style>
+</head>
+<body>
+	<p id="sample">Click Here</p>
+
+	<script type="text/javascript" src="jquery.js"></script>
+	<script type="text/javascript" src="jquery.avgrund.min.js"></script>
+	<script type="text/javascript">
+		$('#sample').avgrund({
+		    width: 300, // max is 640px
+		    height: '250px', // max is 350px
+		    showClose: true, // switch to 'true' for enabling close button
+		    showCloseText: 'Close This Box', // type your text for close button
+		    closeByEscape: true, // enables closing popup by 'Esc'..
+		    closeByDocument: true, // ..and by clicking document itself
+		    holderClass: 'holder', // lets you name custom class for popin holder..
+		    overlayClass: '', // ..and overlay block
+		    enableStackAnimation: false, // enables different type of popin's animation
+		    onBlurContainer: '#sample', // enables blur filter for specified block
+		    openOnEvent: true, // set to 'false' to init on load
+		    setEvent: 'click', // use your event like 'mouseover', 'touchmove', etc.
+		    onLoad: function (elem) {}, // set custom call before popin is inited..
+		    onUnload: function (elem) {}, // ..and after it was closed
+		    template: '<a href="http://7learn.com">7Learn.com</a><br /><br />'
+		    + 'این متن برای نمونه وارد شده است<br />'
+		    + '<p style="color:blue;font-weight:bold">Thanks for watching - Good Luck</p>' // or function (elem) { ... }, or selector $('.content')
+		});
+	</script>
+</body>
+</html>
